@@ -4,6 +4,7 @@ import { Github, Package } from "lucide-react"
 import { TerminalWindow } from "@/components/terminalWindow.tsx"
 import { CopyButton } from "@/components/copyButton.tsx"
 import { useTypingAnimation } from "@/hooks/useTypingAnimation.ts"
+import { useNpmVersion } from "@/hooks/useNpmVersion.ts"
 import { HERO_EXAMPLE } from "@/data/terminalExamples.ts"
 
 const INSTALL_COMMAND = "npm i -g @shan8851/companies-house-cli"
@@ -45,7 +46,10 @@ const AnimatedTerminal = () => {
   )
 }
 
-export const HeroSection = () => (
+export const HeroSection = () => {
+  const npmVersion = useNpmVersion()
+
+  return (
   <section className="min-h-screen flex items-center relative overflow-hidden">
     <div className="absolute inset-0 pointer-events-none">
       <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,var(--color-accent-glow)_0%,transparent_70%)] opacity-60" />
@@ -66,9 +70,11 @@ export const HeroSection = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
+          {npmVersion && (
           <span className="inline-flex items-center gap-2 text-xs font-mono px-3 py-1.5 rounded-full border border-border-bright text-accent bg-accent-glow mb-8">
-            v0.1.0 -- now on npm
+            v{npmVersion} -- now on npm
           </span>
+          )}
         </motion.div>
 
         <motion.h1
@@ -140,4 +146,5 @@ export const HeroSection = () => (
       </motion.div>
     </div>
   </section>
-)
+  )
+}
