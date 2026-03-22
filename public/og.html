@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1200px;
+      height: 630px;
+      background: #0a0f0d;
+      font-family: 'Satoshi', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(#506860 1px, transparent 1px);
+      background-size: 24px 24px;
+      opacity: 0.08;
+    }
+
+    .glow {
+      position: absolute;
+      top: 50%;
+      right: 15%;
+      width: 600px;
+      height: 500px;
+      transform: translateY(-50%);
+      background: radial-gradient(ellipse at center, rgba(0,204,106,0.12) 0%, transparent 70%);
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 60px 80px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cli-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 24px;
+      font-weight: 600;
+      color: #00cc6a;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 72px;
+      font-weight: 400;
+      color: #e8ede9;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    h1 span { color: #00cc6a; }
+
+    .subtitle {
+      font-size: 22px;
+      color: #8a9c92;
+      line-height: 1.5;
+      max-width: 550px;
+      margin-bottom: 40px;
+    }
+
+    .install {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: #080c0a;
+      border: 1px solid #2a4038;
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+    }
+
+    .install .prompt { color: #00cc6a; }
+    .install .cmd { color: #c8d4cc; }
+
+    .terminal {
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 400px;
+      background: #080c0a;
+      border: 1px solid #1e2e28;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 60px rgba(0,204,106,0.1);
+    }
+
+    .terminal-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      background: #111916;
+      border-bottom: 1px solid #1e2e28;
+    }
+
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-red { background: #ff5f57; }
+    .dot-yellow { background: #febc2e; }
+    .dot-green { background: #28c840; }
+
+    .terminal-content {
+      padding: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .terminal-content .prompt-line { color: #e8ede9; }
+    .terminal-content .prompt-char { color: #00cc6a; }
+    .terminal-content .output { color: #c8d4cc; }
+    .terminal-content .muted { color: #8a9c92; }
+
+    .url {
+      position: absolute;
+      bottom: 40px;
+      left: 80px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      color: #506860;
+    }
+  </style>
+</head>
+<body>
+  <div class="dots"></div>
+  <div class="glow"></div>
+
+  <div class="content">
+    <div class="cli-name">companies-house-cli</div>
+    <h1>UK company data<br><span>in your terminal</span></h1>
+    <div class="subtitle">Search companies, directors, filings, and ownership from the command line.</div>
+    <div class="install">
+      <span class="prompt">$</span>
+      <span class="cmd">npm i -g @shan8851/companies-house-cli</span>
+    </div>
+  </div>
+
+  <div class="terminal">
+    <div class="terminal-bar">
+      <div class="dot dot-red"></div>
+      <div class="dot dot-yellow"></div>
+      <div class="dot dot-green"></div>
+    </div>
+    <div class="terminal-content">
+      <div><span class="prompt-char">$</span> <span class="prompt-line">ch search "Revolut"</span></div>
+      <br>
+      <div class="output">Showing 5 of 12 results.</div>
+      <br>
+      <div class="output">1. Revolut Ltd (09215862)</div>
+      <div class="muted">&nbsp;&nbsp;&nbsp;Status: Active</div>
+      <div class="muted">&nbsp;&nbsp;&nbsp;Type: Private limited</div>
+      <br>
+      <div class="output">2. Revolut Payments UK (10690343)</div>
+      <div class="muted">&nbsp;&nbsp;&nbsp;Status: Active</div>
+      <div class="muted">&nbsp;&nbsp;&nbsp;Type: Private limited</div>
+    </div>
+  </div>
+
+  <div class="url">ch-cli.xyz</div>
+</body>
+</html>
