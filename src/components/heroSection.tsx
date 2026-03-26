@@ -50,101 +50,101 @@ export const HeroSection = () => {
   const npmVersion = useNpmVersion()
 
   return (
-  <section className="min-h-screen flex items-center relative overflow-hidden">
-    <div className="absolute inset-0 pointer-events-none">
-      <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,var(--color-accent-glow)_0%,transparent_70%)] opacity-60" />
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "radial-gradient(var(--color-text-dim) 1px, transparent 1px)",
-          backgroundSize: "24px 24px",
-        }}
-      />
-    </div>
-
-    <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <div>
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          {npmVersion && (
-          <span className="inline-flex items-center gap-2 text-xs font-mono px-3 py-1.5 rounded-full border border-border-bright text-accent bg-accent-glow mb-8">
-            v{npmVersion} -- now on npm
-          </span>
-          )}
-        </motion.div>
-
-        <motion.h1
-          className="font-heading text-5xl sm:text-6xl lg:text-7xl text-text leading-[1.05] mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-        >
-          UK company data
-          <br />
-          <span className="text-accent">in your terminal</span>
-        </motion.h1>
-
-        <motion.p
-          className="text-text-muted text-lg leading-relaxed mb-8 max-w-lg"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          Search companies, directors, filings, and ownership — powered by
-          Companies House open data. Built for AI agents, still useful for
-          humans.
-        </motion.p>
-
-        <motion.div
-          className="flex items-center gap-3 px-4 py-3 rounded-lg border border-border-bright bg-terminal-bg font-mono text-sm mb-8 max-w-md"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <span className="text-terminal-prompt select-none">$</span>
-          <code className="text-terminal-output flex-1">{INSTALL_COMMAND}</code>
-          <CopyButton text={INSTALL_COMMAND} />
-        </motion.div>
-
-        <motion.div
-          className="flex flex-wrap gap-3"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <a
-            href="https://github.com/shan8851/companies-house-cli"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-bg font-medium text-sm hover:brightness-110 transition-all duration-200"
-          >
-            <Github size={16} />
-            View on GitHub
-          </a>
-          <a
-            href="https://www.npmjs.com/package/@shan8851/companies-house-cli"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border-bright text-text-muted font-medium text-sm hover:border-accent hover:text-accent transition-all duration-200"
-          >
-            <Package size={16} />
-            npm
-          </a>
-        </motion.div>
+    <section className="min-h-screen flex items-center relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 right-1/4 w-[600px] h-[600px] -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,var(--color-accent-glow)_0%,transparent_70%)] opacity-60" />
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "radial-gradient(var(--color-text-dim) 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+          }}
+        />
       </div>
 
-      <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.7, delay: 0.3 }}
-      >
-        <AnimatedTerminal />
-      </motion.div>
-    </div>
-  </section>
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {npmVersion && (
+              <span className="inline-flex items-center gap-2 text-xs font-mono px-3 py-1.5 rounded-full border border-border-bright text-accent bg-accent-glow mb-8">
+                v{npmVersion} -- now on npm
+              </span>
+            )}
+          </motion.div>
+
+          <motion.h1
+            className="font-heading text-5xl sm:text-6xl lg:text-7xl text-text leading-[1.05] mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            UK company data
+            <br />
+            <span className="text-accent">in your terminal</span>
+          </motion.h1>
+
+          <motion.p
+            className="text-text-muted text-lg leading-relaxed mb-8 max-w-lg"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Search companies, directors, filings, and ownership from Companies
+            House. Readable text in a TTY, stable JSON when piped — handy for
+            humans, sane for agents.
+          </motion.p>
+
+          <motion.div
+            className="flex items-center gap-3 px-4 py-3 rounded-lg border border-border-bright bg-terminal-bg font-mono text-sm mb-8 max-w-md"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <span className="text-terminal-prompt select-none">$</span>
+            <code className="text-terminal-output flex-1">{INSTALL_COMMAND}</code>
+            <CopyButton text={INSTALL_COMMAND} />
+          </motion.div>
+
+          <motion.div
+            className="flex flex-wrap gap-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <a
+              href="https://github.com/shan8851/companies-house-cli"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-bg font-medium text-sm hover:brightness-110 transition-all duration-200"
+            >
+              <Github size={16} />
+              View on GitHub
+            </a>
+            <a
+              href="https://www.npmjs.com/package/@shan8851/companies-house-cli"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border-bright text-text-muted font-medium text-sm hover:border-accent hover:text-accent transition-all duration-200"
+            >
+              <Package size={16} />
+              npm
+            </a>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+        >
+          <AnimatedTerminal />
+        </motion.div>
+      </div>
+    </section>
   )
 }

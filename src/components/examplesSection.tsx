@@ -5,12 +5,14 @@ import {
   SEARCH_EXAMPLE,
   OFFICERS_EXAMPLE,
   INFO_EXAMPLE,
+  PIPED_JSON_EXAMPLE,
 } from "@/data/terminalExamples.ts"
 
 const EXAMPLES = [
   { title: "Search companies", lines: SEARCH_EXAMPLE },
   { title: "Look up officers", lines: OFFICERS_EXAMPLE },
   { title: "Company profile", lines: INFO_EXAMPLE },
+  { title: "Pipe to jq with the default JSON envelope", lines: PIPED_JSON_EXAMPLE },
 ] as const
 
 export const ExamplesSection = () => (
@@ -24,7 +26,7 @@ export const ExamplesSection = () => (
       >
         <SectionHeading
           title="See it in action"
-          subtitle="Real output from the CLI. What you see is what you get."
+          subtitle="TTY output stays readable; piping switches to JSON. Use subcommand-local --json or --text when you want to be explicit."
         />
       </motion.div>
 

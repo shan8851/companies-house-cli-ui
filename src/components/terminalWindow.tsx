@@ -16,12 +16,12 @@ const TerminalLineRenderer = ({ line }: { readonly line: TerminalLine }) => {
     return (
       <div className="flex">
         <span className="text-terminal-prompt select-none mr-2">$</span>
-        <span className="text-text">{line.text}</span>
+        <span className="text-text whitespace-pre">{line.text}</span>
       </div>
     )
   }
 
-  return <div className="text-terminal-output">{line.text}</div>
+  return <div className="text-terminal-output whitespace-pre">{line.text}</div>
 }
 
 export const TerminalWindow = ({

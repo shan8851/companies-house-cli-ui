@@ -1,24 +1,30 @@
 import { motion } from "motion/react"
-import { Cpu, Braces, Terminal } from "lucide-react"
+import { AlertTriangle, Braces, Terminal } from "lucide-react"
 import { SectionHeading } from "@/components/sectionHeading.tsx"
 import { TerminalWindow } from "@/components/terminalWindow.tsx"
-import { JSON_EXAMPLE } from "@/data/terminalExamples.ts"
+import {
+  AGENT_JSON_EXAMPLE,
+  JSON_ERROR_EXAMPLE,
+} from "@/data/terminalExamples.ts"
 
 const AGENT_FEATURES = [
   {
     icon: Braces,
     title: "Stable JSON envelope",
-    description: "Consistent structure across every command",
+    description:
+      "Consistent ok, schemaVersion, command, requestedAt, and data across every command",
   },
   {
     icon: Terminal,
-    title: "Every command supported",
-    description: "Add --json to any command for machine output",
+    title: "Output mode that matches context",
+    description:
+      "Readable text in a TTY, JSON when piped, with subcommand-local --json / --text when you want to force it",
   },
   {
-    icon: Cpu,
-    title: "Pipe to jq or feed to LLMs",
-    description: "Works with OpenClaw, Claude Desktop, any agent that can shell out",
+    icon: AlertTriangle,
+    title: "Structured JSON errors",
+    description:
+      "JSON mode keeps errors on stdout with a machine-friendly code, message, and retryable flag",
   },
 ] as const
 
@@ -31,7 +37,10 @@ export const AgentSection = () => (
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <SectionHeading title="Built for AI agents" />
+        <SectionHeading
+          title="Built for AI agents"
+          subtitle="A small contract you can rely on: the same top-level shape everywhere, explicit input and pagination, and sane defaults for shell pipelines."
+        />
       </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -42,14 +51,10 @@ export const AgentSection = () => (
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <p className="text-text-muted text-lg leading-relaxed mb-8">
-            Every command supports a{" "}
-            <code className="text-accent font-mono text-sm px-1.5 py-0.5 rounded bg-accent-glow">
-              --json
-            </code>{" "}
-            flag that outputs a stable, normalized envelope. Pagination metadata,
-            command context, and clean data — ready to pipe into{" "}
-            <code className="text-terminal-output font-mono text-sm">jq</code>{" "}
-            or feed directly to an LLM.
+            Companies House queries often end up in shell pipelines, scripts, or
+            the next agent step. The CLI now behaves sensibly by default, while
+            keeping the contract boring and predictable when you need to parse
+            it.
           </p>
 
           <div className="space-y-4">
@@ -70,12 +75,14 @@ export const AgentSection = () => (
         </motion.div>
 
         <motion.div
+          className="space-y-6"
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <TerminalWindow lines={JSON_EXAMPLE} />
+          <TerminalWindow title="success envelope" lines={AGENT_JSON_EXAMPLE} />
+          <TerminalWindow title="structured error" lines={JSON_ERROR_EXAMPLE} />
         </motion.div>
       </div>
     </div>
