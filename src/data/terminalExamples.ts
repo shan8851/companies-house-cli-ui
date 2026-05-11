@@ -39,6 +39,30 @@ export const SEARCH_EXAMPLE: ReadonlyArray<TerminalLine> = [
   { type: "output", text: "   Address: Broadwalk House, 5 Appold Street, London, EC2A 2AG" },
 ]
 
+export const ADVANCED_SEARCH_EXAMPLE: ReadonlyArray<TerminalLine> = [
+  {
+    type: "prompt",
+    text: 'ch search-advanced --location Durham --sic-codes 69201',
+  },
+  { type: "blank", text: "" },
+  {
+    type: "output",
+    text: "Filters: companyStatus: active · location: County Durham · sicCodes: 69201",
+  },
+  { type: "blank", text: "" },
+  { type: "output", text: "Showing 5 of 120 results." },
+  { type: "blank", text: "" },
+  { type: "output", text: "Acme Accounting Ltd (12345678)" },
+  { type: "output", text: "Active" },
+  { type: "output", text: "ltd · Created 2018-04-10" },
+  { type: "output", text: "Durham, DH1 1AA" },
+  { type: "blank", text: "" },
+  { type: "output", text: "North East Tax Services Ltd (23456789)" },
+  { type: "output", text: "Active" },
+  { type: "output", text: "ltd · Created 2012-09-03" },
+  { type: "output", text: "County Durham, DH7 8AA" },
+]
+
 export const OFFICERS_EXAMPLE: ReadonlyArray<TerminalLine> = [
   { type: "prompt", text: "ch officers 09215862" },
   { type: "blank", text: "" },

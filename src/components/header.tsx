@@ -5,6 +5,7 @@ const NAV_LINKS = [
   { label: "Install", href: "#install" },
   { label: "Features", href: "#features" },
   { label: "Examples", href: "#examples" },
+  { label: "Research Sprint", href: "#research-offer" },
 ] as const
 
 export const Header = () => {

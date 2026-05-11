@@ -94,9 +94,9 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Search companies, directors, filings, and ownership from Companies
-            House. Readable text in a TTY, stable JSON when piped — handy for
-            humans, sane for agents.
+            Search companies, directors, filings, ownership, and advanced discovery
+            filters from Companies House. Readable text in a TTY, stable JSON when
+            piped — handy for humans, sane for agents.
           </motion.p>
 
           <motion.div

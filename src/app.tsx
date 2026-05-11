@@ -5,6 +5,7 @@ import { FeaturesSection } from "@/components/featuresSection.tsx"
 import { ExamplesSection } from "@/components/examplesSection.tsx"
 import { AgentSection } from "@/components/agentSection.tsx"
 import { SkillSection } from "@/components/skillSection.tsx"
+import { ResearchOfferSection } from "@/components/researchOfferSection.tsx"
 import { Footer } from "@/components/footer.tsx"
 
 export const App = () => (
@@ -17,6 +18,7 @@ export const App = () => (
       <ExamplesSection />
       <AgentSection />
       <SkillSection />
+      <ResearchOfferSection />
     </main>
     <Footer />
   </>

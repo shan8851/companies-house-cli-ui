@@ -3,6 +3,7 @@ import { SectionHeading } from "@/components/sectionHeading.tsx"
 import { TerminalWindow } from "@/components/terminalWindow.tsx"
 import {
   SEARCH_EXAMPLE,
+  ADVANCED_SEARCH_EXAMPLE,
   OFFICERS_EXAMPLE,
   INFO_EXAMPLE,
   PIPED_JSON_EXAMPLE,
@@ -10,6 +11,7 @@ import {
 
 const EXAMPLES = [
   { title: "Search companies", lines: SEARCH_EXAMPLE },
+  { title: "Advanced discovery", lines: ADVANCED_SEARCH_EXAMPLE },
   { title: "Look up officers", lines: OFFICERS_EXAMPLE },
   { title: "Company profile", lines: INFO_EXAMPLE },
   { title: "Pipe to jq with the default JSON envelope", lines: PIPED_JSON_EXAMPLE },

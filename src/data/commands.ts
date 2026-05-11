@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react"
 import {
   Search,
+  SlidersHorizontal,
   Building2,
   Users,
   FileText,
@@ -25,6 +26,13 @@ export const COMMANDS: ReadonlyArray<Command> = [
     description: "Find any UK registered company by name",
     icon: Search,
     example: 'ch search "Revolut"',
+  },
+  {
+    name: "Advanced Search",
+    fullCommand: "ch search-advanced",
+    description: "Discover companies by location, SIC code, status, type, and dates",
+    icon: SlidersHorizontal,
+    example: 'ch search-advanced --location "Durham" --sic-codes 69201',
   },
   {
     name: "Company Profile",

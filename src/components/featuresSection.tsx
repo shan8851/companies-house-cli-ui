@@ -15,7 +15,7 @@ export const FeaturesSection = () => (
       >
         <SectionHeading
           title="What you can query"
-          subtitle="Eight commands covering the public Companies House API, with a stable JSON contract when you need machine output."
+          subtitle="Nine commands covering lookup, relationship tracing, due-diligence signals, and advanced discovery — with a stable JSON contract when you need machine output."
         />
       </motion.div>
 
